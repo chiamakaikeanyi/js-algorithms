@@ -30,4 +30,5 @@ function caesarCipher(str, num) {
 
   return newString;
 }
+
 caesarCipher('Chiamaka Ikeanyi', 2);
