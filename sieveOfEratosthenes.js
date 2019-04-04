@@ -1,11 +1,11 @@
-const sieveOfEratosthenes = (n) => {
-  let primes = new Array(n).fill(true);
+const sieveOfEratosthenes = (num) => {
+  let primes = new Array(num).fill(true);
 
   primes[0] = false;
   primes[1] = false;
 
-  for (let i = 2; i < Math.sqrt(n); i++) {
-    for (let j = 2; j * i <= n; j++) {
+  for (let i = 2; i < Math.sqrt(num); i++) {
+    for (let j = 2; j * i <= num; j++) {
       primes[i * j] = false;
     }
   }
