@@ -1,5 +1,5 @@
 const sieveOfEratosthenes = (n) => {
-  var primes = new Array(n).fill(true);
+  let primes = new Array(n).fill(true);
 
   primes[0] = false;
   primes[1] = false;
