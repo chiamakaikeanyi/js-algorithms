@@ -27,7 +27,16 @@ const reverseString = (str) => {
   return reversed.trim()
 }
 
+// Soln23:
+function reverseString(str){
+  var reversedString = "";
+  for(let i = str.length-1; i >= 0; i--){
+    reversedString = reversedString.concat(str[i]);
+  }
+  return reversedString;
+}
 
+// Test
 const testCase = () => {
  if(reverseString('Hello World') === 'dlroW olleH') {
   console.info('Test PASSED');
