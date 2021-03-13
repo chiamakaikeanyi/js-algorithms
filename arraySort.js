@@ -6,4 +6,9 @@ const shirts = [
   { color: 'black', size: 'M' }
 ];
 
-shirts.sort((a, b) => (a.color < b.color) ? 1 : -1);
+// Asc
+shirts.sort((a, b) => (a.color > b.color) ? 1 : -1)
+
+// Desc
+shirts.sort((a, b) => (a.color < b.color) ? 1 : -1)
+
