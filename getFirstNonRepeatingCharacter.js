@@ -17,6 +17,7 @@ function getFirstNonRepeatingCharacter(string) {
       break;
     }
   }
+  
   return result;
 }
 
