@@ -26,3 +26,14 @@ const reverseString = (str) => {
   }
   return reversed.trim()
 }
+
+
+const testCase = () => {
+ if(reverseString('Hello World') === 'dlroW olleH') {
+  console.info('Test PASSED');
+  return;
+ }
+ console.info('Test FAILED');
+}
+
+testCase();
