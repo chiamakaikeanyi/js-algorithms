@@ -23,3 +23,14 @@ const findLongestWordLength = (string) => {
   }
   return max;
 }
+
+function testCase() {
+    if (findLongestWordLength("The quick brown fox jumped over the lazy dog") === 6) {
+      console.log("Correct result - Test PASSED");
+      return;
+    }
+
+    console.log("Test FAILED", arguments[0]);
+}
+
+testCase();
