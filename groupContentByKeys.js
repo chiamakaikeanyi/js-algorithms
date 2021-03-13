@@ -1,12 +1,12 @@
 const list = [
     {
-      question: "what is your?",
-      answer: "Bens",
+      question: "what is your name?",
+      answer: "Noble",
       topic: "names"
     },
    {
-      question: "what is your name?",
-      answer: "Ben",
+      question: "what is your friend's name?",
+      answer: "Great",
       topic: "names"
     },
     {
@@ -15,13 +15,13 @@ const list = [
       topic: "gender"
     },
     {
-      question: "What is your mum's age?",
-      answer: 55,
+      question: "What is your age?",
+      answer: 20,
       topic: "ages"
     },
     {
       question: "What is your brother's age?",
-      answer: 55,
+      answer: 18,
       topic: "ages"
     }
  ]
