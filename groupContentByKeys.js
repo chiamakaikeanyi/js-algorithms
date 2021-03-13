@@ -26,17 +26,23 @@ const list = [
     }
  ]
 
-// sample output
-// [
-//     {
-//       topic: "names",
-//       content: [...array of objects based on "names"...]
-//     },
-//  {
-//       topic: "ages",
-//       content: [...array of objects based on "ages"...]
-//     }
-//  ]
+/* sample output
+[
+    {
+      topic: "names",
+      content: [...array of objects based on "names"...]
+    },
+    {
+      topic: "gender",
+      content: [...array of objects based on "gender"...]
+    },
+    {
+      topic: "ages",
+      content: [...array of objects based on "ages"...]
+    }
+ ]
+*/
+
 
 function groupContentByKeys(list) {
   const obj = {};
