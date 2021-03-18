@@ -24,6 +24,11 @@ const findLongestWordLength = (string) => {
   return max;
 }
 
+// Soln 3:
+function findLongestWordLength(string){
+ return string.split(' ').sort((a,b) => b.length -  a.length)[0].length
+}
+
 function testCase() {
     if (findLongestWordLength("The quick brown fox jumped over the lazy dog") === 6) {
       console.log("Correct result - Test PASSED");
