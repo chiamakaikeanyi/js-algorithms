@@ -2,36 +2,52 @@
  Given a string, check if it contains matching pair
 */
 
-function isValidBracketPair(str) {
-  if (str.length <= 1)
+function isValidBracketPair(s) {
+  // It isn't balanced so, no need to continue
+   if (s.length <= 1) {
     return false
+  }
+  
+  const openingBrackets = ['[', '{', '('];
+  const closingBrackets = [']', '}', ')'];
 
-  let matchingOpeningBracket, character
-  let stack = []
+  let matchingOpeningBracket;
+  const stack = [];
 
-  let openingBrackets = ['[', '{', '(']
-  let closingBrackets = [']', '}', ')']
+  let result;
 
-  for (let i = 0; i < str.length; i++) {
-    character = str[i]
-
-    if (closingBrackets.indexOf(character) > -1) {
-      matchingOpeningBracket = openingBrackets[closingBrackets.indexOf(character)]
-      if (stack.length == 0 || (stack.pop() != matchingOpeningBracket)) {
-        return false
+  for (let i = 0; i < s.length; i++) {
+    // String is contained in closing brackets array
+    if (closingBrackets.indexOf(s[i]) > -1) {
+      // Get the opening equivalent
+      matchingOpeningBracket = openingBrackets[closingBrackets.indexOf(s[i])];
+      // Check if the last added bracket equals to the matchingOpeningBracket   
+      if (stack.pop() != matchingOpeningBracket) {
+        result = 'NO';
+        return result;
       }
     } else {
-      stack.push(character)
+      // Should be an opening bracket, so push to stack
+      stack.push(s[i]);
     }
   }
-
-  return (stack.length === 0)
+  // If stack is empty, all bracket pairs have been found and removed from the stack
+  result = stack.length === 0 ? 'YES' : 'NO';;
+  return result;;
 };
 
-console.log(isValidBracketPair("([)]")) // false
-console.log(isValidBracketPair("()")) // true
-console.log(isValidBracketPair("{}[]()")) // true
-console.log(isValidBracketPair("{[}]")) // false
-console.log(isValidBracketPair("{[}]")) // false
-console.log(isValidBracketPair("[{()()}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]")) // true
-console.log(isValidBracketPair("{}[]()")) // true
+isValidBracketPair('{[()]}'); // YES
+isValidBracketPair('{[(])}'); // NO
+isValidBracketPair('{{[[(())]]}}'); // YES
+isValidBracketPair('{{([])}}'); // YES
+isValidBracketPair('{{)[](}}'); // NO
+isValidBracketPair('{(([])[])[]}'); // YES
+isValidBracketPair('{(([])[])[]]}'); // NO
+isValidBracketPair('{(([])[])[]}[]'); // YES
+isValidBracketPair("([)]")) // NO
+isValidBracketPair("()")) // YES
+isValidBracketPair("{}[]()")) // YES
+isValidBracketPair("{[}]")) // NO
+isValidBracketPair("{[}]") // NO
+isValidBracketPair("[{()()}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]") // true
+isValidBracketPair("{}[]()") // YES
