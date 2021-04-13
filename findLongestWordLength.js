@@ -29,6 +29,27 @@ function findLongestWordLength(string){
  return string.split(' ').sort((a,b) => b.length -  a.length)[0].length
 }
 
+// Soln 4:
+function findLongestWordLength(string, separator) {
+  let currentIndex = 0;
+  let separatorIndex;
+  let maxLength = 0
+  
+  for(let i = 0; i < string.length; i++){
+    if(string[i] === separator){
+      separatorIndex = i;   
+      
+      let currentWordlength = separatorIndex - currentIndex;
+
+      maxLength = currentWordlength > maxLength ? currentWordlength : maxLength;
+
+      currentIndex = i + 1;
+    }
+  }
+  return maxLength;
+}
+
+
 function testCase() {
     if (findLongestWordLength("The quick brown fox jumped over the lazy dog") === 6) {
       console.log("Correct result - Test PASSED");
