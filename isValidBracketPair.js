@@ -49,5 +49,5 @@ isValidBracketPair("()")) // YES
 isValidBracketPair("{}[]()")) // YES
 isValidBracketPair("{[}]")) // NO
 isValidBracketPair("{[}]") // NO
-isValidBracketPair("[{()()}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]") // true
+isValidBracketPair("[{()()}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]") // YES
 isValidBracketPair("{}[]()") // YES
