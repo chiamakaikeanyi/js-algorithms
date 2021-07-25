@@ -62,4 +62,4 @@ function groupContentByKeys(list) {
   return Object.values(obj)
 }
 
-groupContentByKeys(list)
+groupContentByKeys(list, 'topic')
